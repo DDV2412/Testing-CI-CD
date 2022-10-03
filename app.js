@@ -1,20 +1,20 @@
-const express = require('express')
-const router = require('./route')
-const app = express()
+const express = require("express");
+const router = require("./route");
+const app = express();
 
-const host = 'localhost';
-const port = 8080;
+const host = "0.0.0.0";
+const port = 5000;
 
-app.get('/', function (req, res) {
-    res.json({
-        host,
-        port
-    })
-})
+app.get("/", function (req, res) {
+  res.json({
+    host,
+    port,
+  });
+});
 
 // ini cara pakai router yg didefinisikan di route.js
-app.use(router)
+app.use(router);
 
 app.listen(port, host, () => {
-    console.log(`Server is running on http://${host}:${port}`);
-})
+  console.log(`Server is running on http://${host}:${port}`);
+});
